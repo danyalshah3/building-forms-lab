@@ -5,11 +5,13 @@ import { connect } from 'react-redux'
 class BandInput extends Component {
 
   
-  
-   
-    state = {
+  constructor(){
+  super()
+    this.state = {
       name: ""
     }
+  }
+   
 
 
     handleOnChange(event) {

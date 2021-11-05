@@ -5,16 +5,18 @@ import { connect } from 'react-redux'
 
 class BandsContainer extends Component {
 
-
-  renderBands = () => this.props.bands.map((name, id) => <BandInput key={id} text={name} />)
+  componentDidMount(){
+    console.log(this.props.bands)
+  }
+   renderBands = () => this.props.bands.map((band) => <li key={band.id} >{band.name}</li>)
   render() {
     return (
       <div>
-        <li>
+        <ul>
         {this.renderBands()}
-        </li>
+        </ul>
         
-         {/* <BandInput addBand={this.props.addBand}/> */}
+         <BandInput addBand={this.props.addBand}/>
 
       </div>
     )
